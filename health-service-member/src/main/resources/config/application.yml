@@ -1,0 +1,9 @@
+# 业务应用配置，优先加载，可以重写health_core配置文件信息
+
+server:
+  port: 9092
+
+
+spring:
+  application:
+    name: member-application #应用名称

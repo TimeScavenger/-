@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.0.RELEASE</version>
+    </parent>
+
+    <groupId>com.dedecms.health</groupId>
+    <artifactId>health-master</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>health-common</module>
+        <module>health-api</module>
+        <module>health-core</module>
+        <module>health-web</module>
+		<module>health-service-appointment</module>
+        <module>health-service-member</module>
+    </modules>
+
+    <properties>
+        <mybatis-plus.version>3.3.2</mybatis-plus.version>
+        <health-api.version>1.0-SNAPSHOT</health-api.version>
+        <health-common.version>1.0-SNAPSHOT</health-common.version>
+        <health-core.version>1.0-SNAPSHOT</health-core.version>
+    </properties>
+
+    <!-- 子项目模块配置 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.dedecms.health</groupId>
+                <artifactId>health-common</artifactId>
+                <version>${health-common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dedecms.health</groupId>
+                <artifactId>health-api</artifactId>
+                <version>${health-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dedecms.health</groupId>
+                <artifactId>health-core</artifactId>
+                <version>${health-core.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
